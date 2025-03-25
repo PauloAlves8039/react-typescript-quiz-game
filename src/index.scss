@@ -1,0 +1,125 @@
+:root {
+    font-family: "Poppins", sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    --white-color1: #FFF;
+    --yellow-color1: #FFFF00;
+    --main-color1: #4047C1;
+    --secondary-color1: #FCA82F;
+    --secondary-color2: #FEC069;
+    --gray-color1: #ECECEC;
+    --gray-color2: #E5E5F7;
+    --purple-color1: #8888EA;
+    --green-color1: #73BB05;
+    --green-color1: hsla(84, 95%, 38%, 0.3);
+    --danger-color1: #E74738;
+    --dark-color1: #1D1D1D;
+    --dark-color2: rgba(68,76,247,0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--gray-color2);
+  
+    .container {
+      width: 840px;
+      max-width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+  
+    h1, h2, h3 {
+      color: var(--main);
+    }
+  
+    h4 {
+      font-weight: 400;
+    }
+  
+    button {
+      min-width: 260px;
+      height: 50px;
+      background-color: var(--main);
+      border: 1px solid var(--main);
+      color: var(--white-color1);
+      text-transform: uppercase;
+      display: block;
+      margin: 8px auto;
+      font-size: 18px;
+      border-radius: 16px;
+      transition: 0.5s;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: var(--purple-color1);
+        border: 1px solid var(--purple-color1);
+      }
+  
+      &.yellow {
+        background-color: var(--secondary-color1);
+        border: 1px solid var(--secondary-color1);
+  
+        &:hover {
+          background-color: var(--secondary-color2);
+          border: 1px solid var(--secondary-color2);
+        }
+      }
+      &.white {
+        background-color: var(--white-color1);
+        border: 1px solid var(--white-color1);
+        color: var(--black);
+        &:hover {
+          background-color: var(--gray-color1);
+          border: 1px solid var(--gray-color1);
+        }
+      }
+    }
+  }
+  
+  .pattern-bg {
+    background-image: radial-gradient(var(--dark-color2) 2px, var(--gray-color2) 2px);
+    background-size: 40px 40px;
+  }
+  
+  
+  .full-page-loader {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .lds-dual-ring {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+  
+      &:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid var(--main);
+        border-color: var(--main) transparent var(--main) transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+      }
+    }
+  }
+  
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
