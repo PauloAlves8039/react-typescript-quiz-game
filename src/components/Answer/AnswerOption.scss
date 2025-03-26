@@ -1,0 +1,32 @@
+.answer-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    p {
+        background-color: var(--white-color1);
+        padding: 10px 20px;
+        border: 3px solid var(--white-color1);
+        border-radius: 50px;
+        box-shadow: 0px 4px 10px var(--gray-color3);
+        width: 500px;
+        max-width: 90%;
+        min-height: 50px;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &.selected {
+            border: 3px solid var(--secondary-color1);
+        }
+
+        &.correct {
+            background-color: var(--green-color2);
+            border: 3px solid var(--green-color2);
+        }
+    }
+}

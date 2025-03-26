@@ -5,18 +5,21 @@
     -webkit-font-smoothing: antialiased;
 
     --white-color1: #FFF;
+    --white-color2: #FFFFFF;
     --yellow-color1: #FFFF00;
     --main-color1: #4047C1;
     --secondary-color1: #FCA82F;
     --secondary-color2: #FEC069;
     --gray-color1: #ECECEC;
     --gray-color2: #E5E5F7;
+    --gray-color3: #CECECE;
     --purple-color1: #8888EA;
     --green-color1: #73BB05;
-    --green-color1: hsla(84, 95%, 38%, 0.3);
+    --green-color2: hsla(84, 95%, 38%, 0.3);
     --danger-color1: #E74738;
     --dark-color1: #1D1D1D;
-    --dark-color2: rgba(68,76,247,0.1);
+    --dark-color2: #181818;
+    --dark-color3: rgba(68,76,247,0.1);
 }
 
 body {
@@ -80,7 +83,7 @@ body {
   }
   
   .pattern-bg {
-    background-image: radial-gradient(var(--dark-color2) 2px, var(--gray-color2) 2px);
+    background-image: radial-gradient(var(--dark-color3) 2px, var(--gray-color2) 2px);
     background-size: 40px 40px;
   }
   
