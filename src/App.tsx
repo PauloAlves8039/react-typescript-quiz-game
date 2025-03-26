@@ -1,6 +1,10 @@
 import "./App.scss";
+import { useQuiz } from "./context/QuizContext";
 
 export default function App() {
+
+  const state = useQuiz();
+  console.log(state);
 
   return (
     <>
