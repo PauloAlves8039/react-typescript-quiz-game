@@ -1,16 +1,17 @@
 import "./App.scss";
+import Game from "./components/Gamer/Game";
+import Score from "./components/Score/Score";
 import { useQuiz } from "./context/QuizContext";
 
 export default function App() {
 
-  const state = useQuiz();
+  const {state, dispatch} = useQuiz();
   console.log(state);
 
   return (
     <>
-      <div>
-        <h1>Quiz Game</h1>
-      </div>
+      <Score />
+      <Game />
     </>
   );
 }
