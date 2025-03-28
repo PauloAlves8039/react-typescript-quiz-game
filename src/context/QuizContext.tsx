@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react"
 
-type Status = "idle" | "fetching" | "ready";
+type Status = "idle" | "fetching" | "ready" | "error";
 
 interface QuizContext {
     state: QuizState,

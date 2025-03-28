@@ -111,8 +111,8 @@ body {
         height: 64px;
         margin: 8px;
         border-radius: 50%;
-        border: 6px solid var(--main);
-        border-color: var(--main) transparent var(--main) transparent;
+        border: 6px solid var(--main-color1);
+        border-color: var(--main-color1) transparent var(--main-color1) transparent;
         animation: lds-dual-ring 1.2s linear infinite;
       }
     }
