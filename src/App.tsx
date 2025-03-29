@@ -8,7 +8,6 @@ import "./App.scss";
 export default function App() {
 
   const {state, dispatch} = useQuiz();
-  console.log(state);
 
   async function fetchQuestion() {
     try {
@@ -25,8 +24,10 @@ export default function App() {
   
       if (data.response_code === success) {
         let question: Question = data.results[0];
+
         dispatch({ type: "setStatus", payload: "ready" });
-        console.log(question);
+        dispatch({ type: "setQuestion", payload: question });
+        
       } else {
         dispatch({ type: "setStatus", payload: "error" });
       }
