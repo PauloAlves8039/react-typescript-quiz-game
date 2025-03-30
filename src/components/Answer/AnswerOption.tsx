@@ -1,3 +1,4 @@
+import { encode } from "html-entities";
 import "./AnswerOption.scss";
 
 export default function AnswerOption({answer}: {answer : string}) {
@@ -7,7 +8,7 @@ export default function AnswerOption({answer}: {answer : string}) {
               answer &&
               <div className="answer-option">
                   <p>
-                      {answer}
+                      {encode(answer)}
                   </p>
               </div>
           }
