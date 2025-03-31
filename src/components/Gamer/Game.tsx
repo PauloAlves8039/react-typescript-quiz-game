@@ -1,7 +1,7 @@
 import AnswerOption from "../Answer/AnswerOption";
 import Result from "../Result/Result";
 import { useQuiz } from "../../context/QuizContext";
-import { encode } from "html-entities";
+import { decode } from "html-entities";
 import "./Game.scss";
 
 export default function Game() {
@@ -11,7 +11,7 @@ export default function Game() {
         <>
             <div className="container game-screen">
                 <h2>Question</h2>
-                <h4>{encode(state.question?.question)}</h4>
+                <h4>{decode(state.question?.question)}</h4>
                 <div className="options">
                     {state.question?.incorrect_answers.map((answer) => {
                         return (

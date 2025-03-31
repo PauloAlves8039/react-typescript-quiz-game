@@ -1,4 +1,4 @@
-import { encode } from "html-entities";
+import { decode } from "html-entities";
 import "./AnswerOption.scss";
 import { useQuiz } from "../../context/QuizContext";
 
@@ -8,14 +8,17 @@ export default function AnswerOption({answer}: {answer : string}) {
     return (
       <>
           {
-              answer && 
-              <div className="answer-option">
-                  <p 
-                      className={answer == state.userAnswer ? "selected" : ""}
-                      onClick={() => {dispatch({type: "setUserAnswer", payload: answer})}}>
-                      {encode(answer)}
-                  </p>
-              </div>
+                answer && 
+                <div className="answer-option">
+                    <p
+                        className={`
+                            ${answer == state.userAnswer ? "selected" : ""} 
+                            ${state.gameStatus == "answered" && answer == state.question?.correct_answer ? "correct" : ""}
+                        `}
+                        onClick={() => { dispatch({ type: "setUserAnswer", payload: answer }) }} >
+                        {decode(answer)}
+                    </p>
+                </div>
           }
 
       </>
