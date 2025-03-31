@@ -52,11 +52,11 @@ export default function App() {
       {
         state.gameStatus == "fetching" ?
           <FullPageLoader /> : state.gameStatus == "error" ?
-          <p>Error...</p> : state.gameStatus == "ready" ?
+          <p>Error...</p> : 
           <>
             <Score />
             <Game /> 
-          </> : "" 
+          </>
       }
     </>
   );

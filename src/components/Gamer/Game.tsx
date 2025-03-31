@@ -5,7 +5,7 @@ import { encode } from "html-entities";
 import "./Game.scss";
 
 export default function Game() {
-    const { state } = useQuiz();
+    const { state, dispatch } = useQuiz();
     
     return (
         <>
@@ -21,11 +21,14 @@ export default function Game() {
                 </div>
 
                 {
-                    state.userAnswer &&
-                    <button>Submit</button>
+                    state.userAnswer && state.gameStatus != "answered" &&
+                    <button onClick={()=>{dispatch({type: "setStatus", payload: "answered"})}}>Submit</button>
                 }
 
-                {/* <Result /> */}
+                {
+                    state.gameStatus == "answered" &&
+                    <Result />
+                }
 
             </div>
         </>
