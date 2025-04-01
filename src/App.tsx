@@ -12,6 +12,8 @@ export default function App() {
   async function fetchQuestion() {
     try {
       dispatch({ type: "setStatus", payload: "fetching" });
+      dispatch({ type: "setUserAnswer", payload: null });
+
       await new Promise((resolve) => setTimeout(resolve, 1000));
       const response = await fetch("https://opentdb.com/api.php?amount=1&category=18");
   

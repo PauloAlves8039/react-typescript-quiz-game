@@ -6,6 +6,15 @@ import "./Game.scss";
 
 export default function Game() {
     const { state, dispatch } = useQuiz();
+
+    function handleSubmit() {
+        dispatch({ type: "setStatus", payload: "answered" });
+        if (state.userAnswer == state.question?.correct_answer) {
+            dispatch({ type: "setScore", payload: "correct" });
+        } else {
+            dispatch({ type: "setScore", payload: "incorrect" });
+        }
+    }
     
     return (
         <>
@@ -22,7 +31,7 @@ export default function Game() {
 
                 {
                     state.userAnswer && state.gameStatus != "answered" &&
-                    <button onClick={()=>{dispatch({type: "setStatus", payload: "answered"})}}>Submit</button>
+                    <button onClick={handleSubmit} >Submit</button>
                 }
 
                 {
