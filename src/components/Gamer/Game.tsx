@@ -2,17 +2,27 @@ import AnswerOption from "../Answer/AnswerOption";
 import Result from "../Result/Result";
 import { useQuiz } from "../../context/QuizContext";
 import { decode } from "html-entities";
+import wonSound from "../../assets/sounds/won.wav";
+import lostSound from "../../assets/sounds/lost.wav";
+// @ts-ignore
+import confetti from "https://cdn.skypack.dev/canvas-confetti";
 import "./Game.scss";
 
 export default function Game() {
     const { state, dispatch } = useQuiz();
 
-    function handleSubmit() {
-        dispatch({ type: "setStatus", payload: "answered" });
+    let wonAudio = new Audio(wonSound);
+    let lostAudio = new Audio(lostSound);
+
+    function handleSubmit(){ 
+        dispatch({type:"setStatus", payload: "answered"});
         if (state.userAnswer == state.question?.correct_answer) {
-            dispatch({ type: "setScore", payload: "correct" });
+            dispatch({type:"setScore", payload: "correct"});
+            wonAudio.play();
+            confetti();
         } else {
-            dispatch({ type: "setScore", payload: "incorrect" });
+            dispatch({type:"setScore", payload: "incorrect"});
+            lostAudio.play();
         }
     }
     
