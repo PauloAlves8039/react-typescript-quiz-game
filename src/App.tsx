@@ -1,9 +1,10 @@
 import {useEffect} from "react";
 import Game from "./components/Gamer/Game";
 import Score from "./components/Score/Score";
-import { useQuiz, Question, QuestionsResponse } from "./context/QuizContext";
+import { useQuiz } from "./context/QuizContext";
 import FullPageLoader from "./components/Loader/FullPageLoader";
 import "./App.scss";
+import { Question, QuestionsResponse } from "./types/questionTypes";
 
 export default function App() {
 
